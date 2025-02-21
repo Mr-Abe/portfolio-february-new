@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Clock, ArrowRight, Tag } from 'lucide-react';
+// Be sure to update your blogPosts data in '../data' to reflect the new topics
 import { blogPosts } from '../data';
 
 const Blog = () => {
   const [selectedTag, setSelectedTag] = useState<string>('all');
+
+  // Derive unique tags from your blogPosts data
   const tags = Array.from(new Set(blogPosts.flatMap(post => post.tags)));
 
-  const filteredPosts = selectedTag === 'all'
-    ? blogPosts
-    : blogPosts.filter(post => post.tags.includes(selectedTag));
+  // Filter posts based on currently selected tag
+  const filteredPosts =
+    selectedTag === 'all'
+      ? blogPosts
+      : blogPosts.filter(post => post.tags.includes(selectedTag));
 
   return (
     <section id="blog" className="py-20 bg-gray-50 dark:bg-gray-800">
@@ -21,10 +26,14 @@ const Blog = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Technical Insights</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            Healthcare & Tech Insights
+          </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Exploring software engineering concepts, best practices, and industry trends
-            through detailed technical articles and tutorials.
+            Exploring the intersection of <strong>healthcare</strong>, 
+            <strong> technology</strong>, and <strong>organizational leadership</strong>—
+            from digital health and AI/ML advancements to EdTech strategies and 
+            software engineering best practices.
           </p>
         </motion.div>
 
@@ -37,8 +46,10 @@ const Blog = () => {
                 : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
             }`}
           >
-            All Posts
+            All Articles
           </button>
+
+          {/* Dynamically render tag buttons */}
           {tags.map(tag => (
             <button
               key={tag}
@@ -64,6 +75,7 @@ const Blog = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
+              {/* Image Section */}
               <div className="relative h-48 overflow-hidden">
                 <img
                   src={post.imageUrl}
@@ -71,6 +83,8 @@ const Blog = () => {
                   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                 />
               </div>
+
+              {/* Content Section */}
               <div className="p-6">
                 <div className="flex flex-wrap gap-2 mb-4">
                   {post.tags.map(tag => (
@@ -83,6 +97,7 @@ const Blog = () => {
                     </span>
                   ))}
                 </div>
+
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                   {post.title}
                 </h3>

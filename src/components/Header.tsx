@@ -26,7 +26,7 @@ const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             className="text-2xl font-bold text-gray-800 dark:text-white"
           >
-            John Doe
+            Dwight "Doc" Abrahams
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -94,7 +94,7 @@ const NavLinks = ({ mobile }: { mobile?: boolean }) => {
 const SocialLinks = () => (
   <div className="flex items-center space-x-4">
     <a
-      href="https://github.com/yourusername"
+      href="https://github.com/mr-abe"
       target="_blank"
       rel="noopener noreferrer"
       className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300"
@@ -103,7 +103,7 @@ const SocialLinks = () => (
       <Github size={20} />
     </a>
     <a
-      href="https://linkedin.com/in/yourusername"
+      href="https://www.linkedin.com/in/dwight-abrahams-software-engineer/?trk=public_profile"
       target="_blank"
       rel="noopener noreferrer"
       className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300"
@@ -112,7 +112,7 @@ const SocialLinks = () => (
       <Linkedin size={20} />
     </a>
     <a
-      href="mailto:your.email@example.com"
+      href="mailto:Portfolio@abrahams.app"
       className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300"
       aria-label="Email Contact"
     >

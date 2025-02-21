@@ -13,12 +13,14 @@ const Hero = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              Software Engineer & 
-              <span className="text-blue-600 dark:text-blue-400"> Problem Solver</span>
+              Bridging <span className="text-blue-600 dark:text-blue-400">Healthcare</span> &amp; Technology
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-              Passionate about building scalable systems and creating innovative solutions.
-              Specializing in distributed systems, cloud architecture, and machine learning.
+              I’m a Software Engineer and Organizational Development leader
+              dedicated to transforming healthcare through modern technology.
+              My expertise spans digital health solutions, AI-driven analytics,
+              and scalable architectures that improve patient outcomes and
+              streamline care workflows.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
@@ -45,22 +47,22 @@ const Hero = () => {
           >
             <TechCard
               icon={<Code2 size={32} />}
-              title="Frontend Development"
-              description="React, TypeScript, and modern web technologies"
+              title="Health Tech Frontend"
+              description="React, TypeScript, and modern UI/UX practices for seamless digital health experiences"
             />
             <TechCard
               icon={<Terminal size={32} />}
-              title="Backend Systems"
-              description="Node.js, Python, and distributed systems"
+              title="Backend & Informatics"
+              description="Node.js, Python, and interoperability with EHR/EMR systems (HL7, FHIR)"
             />
             <TechCard
               icon={<Database size={32} />}
-              title="Cloud Architecture"
-              description="AWS, Docker, and Kubernetes"
+              title="Cloud & Telehealth"
+              description="AWS, Docker, Kubernetes for scalable, secure, and HIPAA-compliant solutions"
             />
             <TechCard
-              title="Machine Learning"
-              description="TensorFlow, PyTorch, and data pipelines"
+              title="AI & ML in Healthcare"
+              description="TensorFlow, PyTorch, and data pipelines powering predictive analytics and patient care insights"
               icon={<Terminal size={32} />}
             />
           </motion.div>
@@ -70,11 +72,23 @@ const Hero = () => {
   );
 };
 
-const TechCard = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
+const TechCard = ({
+  icon,
+  title,
+  description,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}) => (
   <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
     <div className="text-blue-600 dark:text-blue-400 mb-4">{icon}</div>
-    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{title}</h3>
-    <p className="text-gray-600 dark:text-gray-300 text-sm">{description}</p>
+    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+      {title}
+    </h3>
+    <p className="text-gray-600 dark:text-gray-300 text-sm">
+      {description}
+    </p>
   </div>
 );
 

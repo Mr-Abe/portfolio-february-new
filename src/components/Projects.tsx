@@ -5,11 +5,14 @@ import { projects } from '../data';
 
 const Projects = () => {
   const [filter, setFilter] = useState<string>('all');
+
+  // Extract unique technologies from your projects array
   const technologies = Array.from(
     new Set(projects.flatMap(project => project.technologies))
   );
 
-  const filteredProjects = projects.filter(project => 
+  // Filter projects based on the selected technology
+  const filteredProjects = projects.filter(project =>
     filter === 'all' || project.technologies.includes(filter)
   );
 
@@ -23,14 +26,19 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Featured Projects</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            Healthcare & Tech Projects
+          </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Explore my latest projects showcasing expertise in distributed systems, 
-            machine learning, and cloud architecture.
+            Explore my recent work leveraging <strong>software engineering</strong>, 
+            <strong> digital health</strong>, and <strong>AI/ML</strong> to enhance 
+            patient care, streamline operations, and support 
+            organizational development in the healthcare space.
           </p>
         </motion.div>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {/* "All" button for filtering */}
           <button
             onClick={() => setFilter('all')}
             className={`px-4 py-2 rounded-full transition-colors duration-300 ${
@@ -39,8 +47,10 @@ const Projects = () => {
                 : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
             }`}
           >
-            All
+            All Projects
           </button>
+
+          {/* Render a button for each unique technology */}
           {technologies.map(tech => (
             <button
               key={tech}
@@ -66,6 +76,7 @@ const Projects = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
+              {/* Project Image */}
               <div className="relative h-48 overflow-hidden">
                 <img
                   src={project.imageUrl}
@@ -73,11 +84,17 @@ const Projects = () => {
                   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                 />
               </div>
+
+              {/* Project Details */}
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  {project.description}
+                </p>
+
+                {/* Technologies used */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map(tech => (
                     <span
@@ -88,6 +105,8 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
+
+                {/* Links to GitHub or Live Demo */}
                 <div className="flex gap-4">
                   {project.githubUrl && (
                     <a

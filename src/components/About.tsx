@@ -1,39 +1,43 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, GraduationCap, Award, Code2 } from 'lucide-react';
+import { Briefcase, Code2, GraduationCap, Award } from 'lucide-react';
 
 const timelineData = [
   {
     id: 1,
-    date: '2023 - Present',
-    title: 'Senior Software Engineer',
-    company: 'Tech Innovations Inc.',
-    description: 'Leading distributed systems development and cloud architecture initiatives.',
-    icon: <Briefcase className="w-6 h-6" />,
+    date: '2023 – Present',
+    title: 'Assistant Educator & Curriculum Developer',
+    company: "St. Mary's Early Learning Center",
+    description:
+      'Design and facilitate Reggio-Emilia inspired lesson plans while integrating EdTech solutions. Collaborate with administrators to incorporate digital literacy into early childhood programs, enhancing engagement and foundational STEM skills.',
+    icon: <Award className="w-6 h-6" />,
   },
   {
     id: 2,
-    date: '2021 - 2023',
-    title: 'Software Engineer',
-    company: 'Data Systems Corp',
-    description: 'Developed scalable machine learning pipelines and microservices architecture.',
+    date: '2022 – 2023',
+    title: 'Back End Engineer (Intern)',
+    company: 'Lyft',
+    description:
+      'Developed and refactored microservices using Python and TDD practices. Improved code maintainability by 30% and increased unit test coverage to 85%. Collaborated with cross-functional teams to optimize continuous integration pipelines.',
     icon: <Code2 className="w-6 h-6" />,
   },
   {
     id: 3,
-    date: '2021',
-    title: 'M.S. Computer Science',
-    company: 'Stanford University',
-    description: 'Specialized in Artificial Intelligence and Distributed Systems.',
+    date: '2020 – 2022',
+    title: 'Academician of Computer Science',
+    company: 'The University of Texas at San Antonio',
+    description:
+      'Completed an intensive apprenticeship focusing on AI/ML and software engineering fundamentals. Gained hands-on experience in Spring Boot, SQL, and Cloud Computing. Collaborated on Scrum teams, developing full-stack projects and honing software quality assurance practices.',
     icon: <GraduationCap className="w-6 h-6" />,
   },
   {
     id: 4,
-    date: '2020',
-    title: 'Outstanding Achievement Award',
-    company: 'ACM Conference',
-    description: 'Recognized for contributions to distributed systems research.',
-    icon: <Award className="w-6 h-6" />,
+    date: '2018 – 2020',
+    title: 'Senior Training & Development Specialist',
+    company: 'Leidos',
+    description:
+      'Led organizational development initiatives, designing leadership programs that improved team performance by 15%. Conducted training needs analyses and aligned curricula with business objectives. Partnered with a cross-functional software development team to integrate new learning solutions into enterprise systems.',
+    icon: <Briefcase className="w-6 h-6" />,
   },
 ];
 
@@ -48,11 +52,14 @@ const About = () => {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto text-center mb-16"
         >
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">About Me</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            About Me
+          </h2>
           <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-            I'm a passionate software engineer with expertise in distributed systems and machine learning.
-            My journey in technology has been driven by a desire to solve complex problems and create
-            innovative solutions that make a difference.
+            I’m a multidisciplinary professional bridging healthcare, technology, and education.
+            After years of service in training and organizational leadership, I shifted to software
+            engineering and AI/ML—always driven by a passion for improving learning outcomes,
+            patient care, and operational efficiency in healthcare and EdTech settings.
           </p>
         </motion.div>
 
@@ -74,10 +81,18 @@ const About = () => {
                 }`}
               >
                 <div className={`w-1/2 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12'}`}>
-                  <div className="mb-1 text-sm font-semibold text-blue-600 dark:text-blue-400">{item.date}</div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">{item.title}</h3>
-                  <div className="text-gray-600 dark:text-gray-300 font-medium mb-2">{item.company}</div>
-                  <p className="text-gray-500 dark:text-gray-400">{item.description}</p>
+                  <div className="mb-1 text-sm font-semibold text-blue-600 dark:text-blue-400">
+                    {item.date}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
+                    {item.title}
+                  </h3>
+                  <div className="text-gray-600 dark:text-gray-300 font-medium mb-2">
+                    {item.company}
+                  </div>
+                  <p className="text-gray-500 dark:text-gray-400">
+                    {item.description}
+                  </p>
                 </div>
 
                 <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-4">

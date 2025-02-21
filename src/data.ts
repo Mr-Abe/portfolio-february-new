@@ -22,12 +22,12 @@ export const projects: Project[] = [
 ];
 
 export const skills: Skill[] = [
-  { name: 'TypeScript', category: 'languages', level: 90 },
+  { name: 'TypeScript', category: 'languages', level: 70 },
   { name: 'Python', category: 'languages', level: 85 },
-  { name: 'React', category: 'frameworks', level: 95 },
-  { name: 'Node.js', category: 'frameworks', level: 88 },
-  { name: 'Docker', category: 'tools', level: 82 },
-  { name: 'AWS', category: 'tools', level: 80 }
+  { name: 'React', category: 'frameworks', level: 90 },
+  { name: 'Node.js', category: 'frameworks', level: 75 },
+  { name: 'Docker', category: 'tools', level: 72 },
+  { name: 'AWS', category: 'tools', level: 70 }
 ];
 
 export const blogPosts: BlogPost[] = [
